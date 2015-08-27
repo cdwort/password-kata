@@ -23,10 +23,10 @@ object PasswordStrength {
       else
         return unknown_strength_response
     else
-      if (has_at_least_one_number_and_letter(password))
+      if (has_all_the_things(password))
+        return "Very Strong"
+      else if (has_at_least_one_number_and_letter(password))
         return "Strong"
-      // else if (has_all_the_things(password))
-      //   return "Very Strong"
       else
         return unknown_strength_response
   }
@@ -44,12 +44,23 @@ object PasswordStrength {
   }
 
   def has_at_least_one_number_and_letter(password: String) : Boolean = {
-    val letters = "[A-Za-z]+"
-    val numbers = "[0-9]+"
-    println("has a letter: " + password.matches(letters))
-    println("has a numbers: " + password.matches(numbers))
+    val letters = "[A-Za-z]"
+    val numbers = "[0-9]"
 
-    return password.matches(letters) && password.matches(numbers)
+    return has_at_least_one_of(letters, password) && has_at_least_one_of(numbers, password)
+  }
+
+  def has_all_the_things(password: String) : Boolean = {
+    val special_characters = "\\W"
+
+    return has_at_least_one_number_and_letter(password) && has_at_least_one_of(special_characters, password)
+  }
+
+  def has_at_least_one_of(regex: String, password: String) : Boolean = {
+    return password match {
+      case regex.r.unanchored() => true
+      case _ => false
+    }
   }
 }
 
