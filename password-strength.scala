@@ -1,3 +1,26 @@
+/**
+  * ## Password strength indicator
+  *
+  * ### Problem statement
+  *
+  * Create a program that determines the complexity of a given password based on
+  * these rules:
+  *
+  * - A very weak password contains only numbers and is less than 8 characters
+  * - A weak password contains only letters and is less than 8 characters
+  * - Astrongpasswordcontainslettersandatleast1number and is at least 8 characters
+  * - A very strong password contains letters, numbers, and special characters and
+  *   is at least 8 characters.
+  *
+  * ### Example Output
+  *
+  *     The password '12345' is a very weak password
+  *     The password 'abcdef' is a weak password
+  *     The password 'abc123xyz' is a strong password
+  *     The password '1337h@xor!' is a very strong password.
+  *
+  **/
+
 object PasswordStrength {
   private val unknown_strength_response = "UNKNOWN"
 
