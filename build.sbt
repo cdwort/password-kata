@@ -11,4 +11,4 @@ libraryDependencies ++= Seq(
   "org.scalacheck" %% "scalacheck" % "1.12.1" % "test" withSources() withJavadoc()
 )
 
-initialCommands := "import com.example.password-strength._"
+initialCommands := "import com.amyunger.passwordstrength._"
