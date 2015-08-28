@@ -1,6 +1,6 @@
-name := "password-strength"
+name := "passwordstrength"
 
-organization := "com.example"
+organization := "com.amyunger"
 
 version := "0.0.1"
 
