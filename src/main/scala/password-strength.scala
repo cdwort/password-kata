@@ -1,3 +1,5 @@
+package com.amyunger.passwordstrength
+
 /**
   * ## Password strength indicator
   *
